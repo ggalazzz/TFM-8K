@@ -157,7 +157,7 @@ def run(
                 #Draw contador
                 #if save_img
                 imgsize = im0.shape[0:2]
-                contador = str(n.item()) + "People"
+                contador = str(n.item()) + " People"
                 #annotator.pintar_contador(imgsize, cont)
                 
 

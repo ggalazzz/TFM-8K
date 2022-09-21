@@ -111,10 +111,10 @@ class Annotator:
                 # self.draw.text((box[0], box[1]), label, fill=txt_color, font=self.font, anchor='ls')  # for PIL>8.0
                 self.draw.text((box[0], box[1] - h if outside else box[1]), label, fill=txt_color, font=self.font)
         else:  # cv2
-            pun1, pun2 = (0,0), (150,50)
-            tf = max(self.lw - 1, 1)
+            pun1, pun2 = (0,0), (int(size[0]/4.1),int(size[1]/30)) #Esto habría que modificarlo
+            tf = max(self.lw - 2, 1)
             cv2.rectangle(self.im, pun1, pun2, color=(0, 255, 255), thickness=self.lw, lineType=cv2.LINE_AA)
-            cv2.putText(self.im,cont, (pun1[0] + 15, pun2[1] - 12),
+            cv2.putText(self.im,cont, (10, int(pun2[1] - pun2[1]/5)),#Esto habría que modificarlo
                             0,
                             self.lw / 3,
                             color=(0, 255, 255),
